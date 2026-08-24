@@ -1,0 +1,1036 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mark R. Routson — Product Delivery Portfolio</title>
+<meta name="description" content="Product delivery leader who also builds. Selected work on Vexus, an emergency-response and infectious-disease platform for public health agencies.">
+<style>
+:root{
+  --bg:#0b1017; --bg-2:#111823; --bg-3:#161f2c;
+  --border:#243244;
+  --ink:#e8eef6; --ink-2:#a7b6c9; --ink-3:#728298;
+  --accent:#4f9cf9; --accent-2:#7cc4ff; --good:#3ecf8e; --warn:#f5a524;
+  --max:1120px; --r:14px;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
+  background:rgba(11,16,23,.82);border-bottom:1px solid var(--border);
+}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:60px}
+.nav .brand{font-weight:700;letter-spacing:-.2px;color:var(--ink);white-space:nowrap}
+.nav .links{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
+.nav .links a{color:var(--ink-2);font-size:14.5px;font-weight:500}
+.nav .links a:hover{color:var(--ink);text-decoration:none}
+@media(max-width:720px){.nav .links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:88px 0 56px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:-40% 30% auto -10%;height:520px;
+  background:radial-gradient(closest-side,rgba(79,156,249,.16),transparent 70%);pointer-events:none;
+}
+.hero .wrap{position:relative}
+.eyebrow{
+  font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 18px
+}
+h1{font-size:clamp(34px,5.2vw,54px);line-height:1.1;letter-spacing:-1.4px;margin:0 0 20px;font-weight:700}
+.lede{font-size:clamp(18px,2.2vw,21px);color:var(--ink-2);max-width:62ch;margin:0 0 14px}
+.tagline{font-size:clamp(17px,2vw,20px);color:var(--accent-2);margin:0 0 22px;font-weight:500;letter-spacing:-.2px}
+.lede strong{color:var(--ink);font-weight:600}
+.meta{color:var(--ink-3);font-size:15px;margin-top:26px}
+
+/* ---------- metrics ---------- */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:52px 0 0}
+.metric{background:var(--bg-2);padding:24px 22px}
+.metric .n{font-size:29px;font-weight:700;letter-spacing:-.8px;color:var(--ink);line-height:1.15}
+.metric .n em{font-style:normal;color:var(--accent)}
+.metric .l{font-size:13.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+@media(max-width:860px){.metrics{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.metrics{grid-template-columns:1fr}}
+
+/* ---------- sections ---------- */
+section{padding:76px 0;border-bottom:1px solid var(--border)}
+.sec-head{margin-bottom:44px}
+.sec-head .eyebrow{margin-bottom:12px}
+h2{font-size:clamp(26px,3.4vw,34px);letter-spacing:-.9px;margin:0 0 12px;font-weight:700}
+.sec-head p{color:var(--ink-2);max-width:66ch;margin:0;font-size:17.5px}
+
+/* ---------- case study ---------- */
+.case{
+  background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);
+  padding:34px;margin-bottom:32px
+}
+.case-top{display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:8px}
+.case h3{font-size:24px;letter-spacing:-.5px;margin:0;font-weight:700;flex:1 1 340px}
+.pill{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+  padding:6px 11px;border-radius:999px;border:1px solid var(--border);
+  color:var(--ink-3);background:var(--bg-3);white-space:nowrap
+}
+.pill.built{color:var(--good);border-color:rgba(62,207,142,.32);background:rgba(62,207,142,.08)}
+.pill.led{color:var(--accent-2);border-color:rgba(79,156,249,.32);background:rgba(79,156,249,.08)}
+.role{color:var(--ink-3);font-size:14.5px;font-family:var(--mono);margin:0 0 20px}
+.case > p{color:var(--ink-2);max-width:74ch}
+.case > p.intro{color:var(--ink);font-size:18px}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:26px}
+@media(max-width:820px){.cols{grid-template-columns:1fr;gap:24px}}
+.col h4{
+  font-family:var(--mono);font-size:12px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-3);margin:0 0 12px;font-weight:600
+}
+.col ul{margin:0;padding-left:20px;color:var(--ink-2);font-size:16px}
+.col li{margin-bottom:9px}
+.col li strong{color:var(--ink);font-weight:600}
+
+.outcome{
+  margin-top:26px;padding:18px 22px;border-radius:10px;
+  background:var(--bg-3);border-left:3px solid var(--accent);color:var(--ink-2);font-size:16px
+}
+.outcome strong{color:var(--ink)}
+
+/* ---------- gallery ---------- */
+.gal-label{
+  font-family:var(--mono);font-size:12px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-3);margin:34px 0 14px;font-weight:600
+}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gal.two{grid-template-columns:repeat(2,1fr)}
+.gal.one{grid-template-columns:minmax(0,1fr)}
+/* single hero screenshot: show it whole, not cropped to the thumbnail ratio */
+.gal.one .shot img{aspect-ratio:auto;object-fit:contain;height:auto}
+@media(max-width:900px){.gal,.gal.two{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.gal,.gal.two{grid-template-columns:1fr}}
+.shot{
+  background:var(--bg-3);border:1px solid var(--border);border-radius:10px;overflow:hidden;
+  cursor:zoom-in;transition:border-color .15s ease,transform .15s ease;margin:0
+}
+.shot:hover{border-color:var(--accent);transform:translateY(-2px)}
+.shot img{aspect-ratio:16/10;object-fit:cover;object-position:top left;background:#fff;width:100%}
+.shot figcaption{padding:11px 13px;font-size:13.5px;color:var(--ink-2);line-height:1.45}
+.credit{display:block;margin-top:8px;font-size:12px;color:var(--ink-3)}
+.shot a{display:block}
+.shot a img{cursor:pointer}
+.shot:has(a){cursor:default}
+
+.withheld{
+  margin-top:26px;padding:14px 18px;border-radius:10px;
+  background:rgba(245,165,36,.06);border:1px dashed rgba(245,165,36,.34);
+  color:var(--ink-3);font-size:14.5px
+}
+.withheld strong{color:var(--ink-2)}
+
+/* ---------- lightbox ---------- */
+.lb{
+  position:fixed;inset:0;z-index:100;background:rgba(6,9,13,.94);
+  display:none;align-items:center;justify-content:center;padding:32px;cursor:zoom-out
+}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:82vh;border-radius:8px;box-shadow:0 24px 70px rgba(0,0,0,.6)}
+.lb .cap{
+  position:absolute;bottom:26px;left:0;right:0;text-align:center;color:var(--ink-2);
+  font-size:14.5px;padding:0 32px
+}
+.lb .x{position:absolute;top:20px;right:26px;color:var(--ink-2);font-size:30px;line-height:1;cursor:pointer}
+
+/* ---------- cards / table ---------- */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);padding:28px}
+.card h3{font-size:19px;margin:0 0 10px;letter-spacing:-.3px}
+.card p{color:var(--ink-2);margin:0;font-size:16px}
+
+table{width:100%;border-collapse:collapse;margin-top:24px;font-size:15.5px}
+th,td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:left}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+td{color:var(--ink-2)}
+.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14.5px}
+tr.total td{border-bottom:none;color:var(--ink);font-weight:700;border-top:2px solid var(--border)}
+.tbl-wrap{overflow-x:auto}
+
+/* ---------- contact ---------- */
+.contact{margin-top:30px;padding-top:26px;border-top:1px solid var(--border)}
+.contact-row{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;margin-bottom:14px}
+.contact-row a,.contact-row span{font-size:17px;font-weight:500}
+.contact-row span{color:var(--ink-3)}
+.creds{color:var(--ink-3);font-size:14px;margin:0;line-height:1.6;max-width:90ch}
+
+/* ---------- footer ---------- */
+footer{padding:56px 0 72px;color:var(--ink-3);font-size:14.5px}
+footer p{max-width:74ch;margin:0 0 14px}
+.note{
+  background:var(--bg-2);border:1px solid var(--border);border-left:3px solid var(--warn);
+  border-radius:10px;padding:18px 22px;margin-bottom:26px;color:var(--ink-2);font-size:14.5px
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <span class="brand">Mark R. Routson</span>
+    <div class="links">
+      <a href="#background">About</a>
+      <a href="#work">Work</a>
+      <a href="#inventory">Inventory</a>
+      <a href="#alerts">Alert Center</a>
+      <a href="#soar">SOAR</a>
+      <a href="#modeling">Modeling</a>
+      <a href="#competitive">Competitive</a>
+      <a href="#efv">EFV</a>
+      <a href="#method">Method</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Digital Product Management &amp; Delivery &middot; Multi-Industry</p>
+    <h1>I live at the intersection of tech,<br>process and value delivery.</h1>
+    <p class="tagline">Industry doesn't matter as much as curiosity.</p>
+    <p class="lede">
+      Twenty years turning strategy into shipped software across regulated, high-stakes domains &mdash;
+      pharmaceutical/GxP, automotive OEM, public health, and defense. Since 2025 I've led product for
+      <strong>Vexus</strong>, an integrated emergency-response and infectious-disease platform serving state,
+      local, tribal, and territorial public health agencies &mdash; and personally designed and shipped
+      several of its largest modules using AI-assisted development.
+    </p>
+    <div class="metrics">
+      <div class="metric">
+        <div class="n"><em>978</em> hrs</div>
+        <div class="l">Development hours avoided across five modules &mdash; an 84% reduction, 5.6 FTE-months</div>
+      </div>
+      <div class="metric">
+        <div class="n"><em>$100K</em>/yr</div>
+        <div class="l">Incumbent vendor contract displaced at a state public health department</div>
+      </div>
+      <div class="metric">
+        <div class="n"><em>30+</em> labs</div>
+        <div class="l">Public health laboratories live on the platform, 100+ active users</div>
+      </div>
+      <div class="metric">
+        <div class="n"><em>446</em> PRs</div>
+        <div class="l">Merged across 13 contributors and 110+ tracked work items, program-led</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="background">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Background</p>
+      <h2>Twenty years of shipped software in regulated domains</h2>
+      <p>
+        Product ownership, Agile/SAFe delivery, and program recovery across pharmaceutical/GxP,
+        automotive OEM, public health, and defense.
+      </p>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Public health &amp; emergency response</h3>
+        <p>
+          Product vision and roadmap for an integrated emergency-response and infectious-disease system
+          aligned to NIMS standards and federal epidemic forecasting practice. Stood up Agile operations,
+          roadmapping, PI planning, and QA/test practice from scratch; led 13 contributors through 446
+          merged pull requests with a development &rarr; staging &rarr; main promotion path. Built and personally
+          ran train-the-trainer so customer training scales without the product lead in the room.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Automotive OEM &mdash; incentives &amp; pricing</h3>
+        <p>
+          Established and led a Finance, Incentives &amp; Offering-Management portfolio modeling the
+          end-to-end automotive incentives lifecycle. Led a global cross-functional team of 20+ to deliver
+          eight planning applications integrating incentive-offer analytics with an AI/ML optimizer.
+          As Product Owner of an MSRP configuration and pricing engine, replaced a $360K/year external
+          service with an SAP-integrated ERP solution.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Pharmaceutical &amp; GxP</h3>
+        <p>
+          Delivered a Clinical Trial Management System to GxP/FDA standards for a pre-revenue oncology
+          company, and specified a site-visit pre-processor integrating clinical study data via an EDC API.
+          Recovered R&amp;D BI-dashboard programs that were over budget and behind schedule, and unified
+          15+ data feeds into an integrated procurement dashboard surfacing aging, underspend, and cycle time.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Defense &amp; engineering</h3>
+        <p>
+          Transformed enterprise IT delivery from an underperforming outsourced model to a business-aligned
+          strategy &mdash; a 30% cost reduction with consistent on-time delivery &mdash; and led Modeling &amp; Simulation
+          adoption (CAE/CAD, PLM/PDM, VR human-factors evaluation) to replace long-cycle physical prototyping.
+          Earlier, grew a systems-engineering practice to ~80% of firm revenue.
+        </p>
+      </div>
+    </div>
+
+    <div class="contact">
+      <div class="contact-row">
+        <a href="mailto:routsonm@me.com">routsonm@me.com</a>
+        <a href="tel:+12406882660">240-688-2660</a>
+        <a href="https://www.linkedin.com/in/mark-routson-ms-gsd-762abb5/" target="_blank" rel="noopener">LinkedIn</a>
+        <span>Gaithersburg, MD</span>
+      </div>
+      <p class="creds">
+        PMP &middot; Certified Scrum Product Owner &middot; Certified ScrumMaster &middot; SAFe &middot;
+        New Product Development Professional &middot; Lean Six Sigma Green Belt &middot;
+        AWS Certified (AI &amp; Cloud) &middot; Udacity AI Product Manager &nbsp;|&nbsp;
+        MBA, M.S. Engineering, B.S. Engineering &mdash; University of Maryland, College Park
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Selected Work</p>
+      <h2>Vexus &mdash; emergency response for public health</h2>
+      <p>
+        <a href="https://www.internationalrespondersystems.com/vexus" target="_blank" rel="noopener">Vexus</a>
+        lets organizations proactively plan for, respond to, and monitor emergencies in real time from a
+        single platform &mdash; real-time information sharing, a common operating picture, incident
+        management, GIS integration, alerting and notifications, and resource, personnel and financial
+        management. It serves 500+ organizations, has supported 10,000+ incidents, and runs at 99.9%
+        uptime. I set the product vision and roadmap, defined the module architecture so teams could
+        deliver in parallel, and owned the Epic and user-story backlog through system-integration
+        testing and UAT.
+      </p>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Competitive displacement at a state health department</h3>
+        <p>
+          Drove the technical rollout to a state department of public health and its state and local
+          laboratories &mdash; 30+ labs, 100+ users. Delivery landed in time for the customer to terminate a
+          $100,000/year incumbent contract rather than renew it. Hitting that date was the whole game;
+          a slip would have locked in another vendor term. Built to their real operational model:
+          state emergency-services and mutual-aid regions, CLIA certificate types, lab status boards,
+          and facility status reporting.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Forecast &rarr; alert &rarr; operational response</h3>
+        <p>
+          Led delivery of an outbreak analytics and response capability for a federal forecasting center,
+          integrated <em>operationally</em> rather than as a dashboard: a forecasting API service with
+          credential handling, a webhook receiver that auto-creates incidents from outbreak alerts, and
+          generic event-type routing so new alert classes onboard without code changes. Forecast-driven
+          supply planning from this work was accepted for presentation at a 2026 national public health
+          laboratory conference.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="soar">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Case Study 01</p>
+      <h2>SOAR &mdash; STLT Outbreak Analytics &amp; Response</h2>
+      <p>
+        <a href="https://www.internationalrespondersystems.com/soar" target="_blank" rel="noopener">SOAR</a>
+        enables real-time analytics for the monitoring, modeling, and forecasting of infectious diseases
+        &mdash; COVID-19, influenza, RSV, and West Nile virus &mdash; so state, tribal, local, and territorial
+        public health officials, healthcare providers, and policy makers can make data-driven detection,
+        mitigation, and response decisions. It runs at 94.8% prediction accuracy across 1.2M+ data points
+        processed in real time. The live platform is at
+        <a href="https://soar-forecasting.internationalrespondersystems.net/" target="_blank" rel="noopener">soar-forecasting.internationalrespondersystems.net</a>.
+      </p>
+    </div>
+
+    <article class="case">
+      <div class="case-top">
+        <h3>Forecast, evaluate, and act &mdash; in one platform</h3>
+        <span class="pill led">Program-led delivery</span>
+        <span class="pill">33 models &middot; 4 pathogens</span>
+      </div>
+      <p class="role">Product and delivery lead &middot; forecasting, MQAT, genomics, alerting</p>
+
+      <p class="intro">
+        Most forecasting tools stop at a chart. The hard problems for a public health agency come after
+        that: <em>which</em> of the 33 available models should I trust, how do I combine them, how do I
+        know when a forecast crosses a line that demands action, and how do I connect what the lab is
+        sequencing to what the model is predicting. SOAR answers all four.
+      </p>
+
+      <div class="cols">
+        <div class="col">
+          <h4>Forecasting &amp; model selection</h4>
+          <ul>
+            <li><strong>Ensemble forecasting</strong> across COVID-19, RSV, influenza, and West Nile, with probabilistic quantile selection (P10&ndash;P98) and historical-forecast overlay</li>
+            <li><strong>Build-your-own ensemble</strong> &mdash; combine up to five component models with user-assigned weights summing to 100%, then evaluate the result against the field</li>
+            <li>Automatic <strong>WIS evaluation</strong> in the data pipeline, so every model is continuously scored rather than trusted on reputation</li>
+            <li><strong>Peak-week prediction</strong> for influenza, expressed as a dated probability</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Quality, genomics &amp; response</h4>
+          <ul>
+            <li><strong>Model Quality Assessment Tool (MQAT)</strong> &mdash; ranks all 33 models against a multi-criteria decision framework with user-weighted criteria, saved filter sets, and transparent model cards</li>
+            <li><strong>UShER phylogenetic analysis</strong> &mdash; upload VCF or FASTA sequences and place them on a phylogenetic tree via Taxonium</li>
+            <li><strong>Lab-result reconciliation</strong> &mdash; compares state and county lab detections against sequencing outcomes per sample, scored by match rate</li>
+            <li><strong>Threshold alerting</strong> over email and SMS when forecasted hospitalizations exceed a configured level, with a four-step authoring flow</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="outcome">
+        <strong>Integrated operationally, not just visually &mdash;</strong> I delivered the forecasting API
+        service with credential handling, a webhook receiver that auto-creates incidents from outbreak
+        alerts, and generic event-type routing so new alert classes onboard without code changes.
+        That closes the loop from forecast &rarr; alert &rarr; operational incident response.
+      </div>
+
+      <p class="gal-label">Screens</p>
+      <div class="gal">
+        <figure class="shot"><img loading="lazy" src="img/soar/dashboard.png" alt="SOAR platform dashboard"><figcaption><strong>SOAR dashboard</strong> &mdash; the public entry point to real-time disease forecasting</figcaption></figure>
+        <figure class="shot"><img loading="lazy" src="img/soar/forecast.png" alt="COVID hospitalization forecasting"><figcaption><strong>Forecast</strong> &mdash; hospital admissions with model selection and advanced quantile filters</figcaption></figure>
+        <figure class="shot"><img loading="lazy" src="img/soar/mqat.png" alt="Model Quality Assessment Tool rankings"><figcaption><strong>MQAT</strong> &mdash; 33 models ranked by score, team, type, and attributes under user-weighted criteria</figcaption></figure>
+        <figure class="shot"><img loading="lazy" src="img/soar/ensemble.png" alt="Create ensemble model"><figcaption><strong>Ensemble builder</strong> &mdash; weight up to five component models to a 100% total</figcaption></figure>
+        <figure class="shot"><img loading="lazy" src="img/soar/alerts.png" alt="Hospitalization threshold alert"><figcaption><strong>Alerts</strong> &mdash; current vs. threshold vs. forecasted peak, with the trend that triggered it</figcaption></figure>
+        <figure class="shot"><img loading="lazy" src="img/soar/lab-results.png" alt="Sample analyses lab result comparison"><figcaption><strong>Lab results</strong> &mdash; lab detections reconciled against sequencing outcomes, scored by match rate</figcaption></figure>
+        <figure class="shot"><img loading="lazy" src="img/soar/usher.png" alt="UShER phylogenetic tree"><figcaption><strong>UShER</strong> &mdash; uploaded sequences placed on a phylogenetic tree, 427 sequences via Taxonium</figcaption></figure>
+        <figure class="shot"><img loading="lazy" src="img/soar/measles.png" alt="Measles vaccination simulation"><figcaption><strong>Measles simulation</strong> &mdash; SEIR with pre-school, school-age and adult segments, vaccination vs. baseline</figcaption></figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="modeling">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Case Studies 02 &ndash; 03</p>
+      <h2>Surveillance and forecast-driven supply</h2>
+      <p>
+        Work where the product question was scientific or methodological &mdash; turning surveillance
+        signal into a forecast, and a forecast into a supply decision.
+      </p>
+    </div>
+
+    <article class="case">
+      <div class="case-top">
+        <h3>Wastewater Early Warning System</h3>
+        <span class="pill built">Designed &amp; built</span>
+        <span class="pill">160 hrs est &rarr; 28 hrs actual</span>
+      </div>
+      <p class="role">Proof of concept, dual purpose &middot; 1,162 sites &middot; 725 counties &middot; 128.1M people monitored</p>
+
+      <p class="intro">
+        Wastewater is the earliest population-level signal a health department can get &mdash; it leads
+        clinical reporting, and it doesn't depend on anyone seeking care. This dashboard blends CDC NWSS
+        and WastewaterSCAN into a single view at national, state, county, and individual-treatment-plant
+        granularity, across 19 pathogens.
+      </p>
+
+      <div class="cols">
+        <div class="col">
+          <h4>Capability</h4>
+          <ul>
+            <li><strong>Multi-source blending</strong> &mdash; CDC NWSS (~1,500 sites, 7 pathogens) and WastewaterSCAN (147 sites, 14 pathogens) reconciled into one panel</li>
+            <li><strong>Four levels of granularity</strong> &mdash; national map, state overview, county table, and individual site list, with population-weighted aggregation using Census weights</li>
+            <li>Per-pathogen status gauges, choropleth trend layers, and severity banding (Very High / High / Moderate / Low)</li>
+            <li>Trend analytics &mdash; 2/4/8-week smoothing, confidence bands, a two-week linear forecast toggle, and a date scrubber</li>
+            <li><strong>Wastewater &rarr; hospitalization forecast</strong> &mdash; lead-lag regression from the NWSS COVID percentile to NHSN weekly admissions, with 80% and 95% prediction intervals</li>
+            <li>Email threshold alerts and CSV export</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Why it mattered twice</h4>
+          <ul>
+            <li>A <strong>differentiated capability</strong>: I benchmarked it against CDC NWSS, WastewaterSCAN, Biobot Analytics, the EU JRC/HERA Observatory, and CDC CFA/InsightNet. It scored uniquely on geographic granularity, multi-source integration, and aggregation methodology &mdash; and the wastewater-to-hospitalization forecast integration exists in none of them</li>
+            <li>A deliberate <strong>method experiment</strong> &mdash; how fast can we generate operational dashboards automatically with AI? It answered a question larger than wastewater, establishing a repeatable pattern for standing up the next surveillance dashboard</li>
+            <li>The documented comparison also names the honest gaps: desktop-only, no mobile</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="outcome">
+        <strong>Outcome &mdash;</strong> 160 conventionally-estimated hours delivered in 28. Value on two axes:
+        a capability to sell, and a build method for the roadmap behind it.
+      </div>
+
+      <p class="gal-label">Screens</p>
+      <div class="gal two">
+        <figure class="shot"><img loading="lazy" src="img/wastewater/dashboard-map.png" alt="Wastewater dashboard national map"><figcaption><strong>National map</strong> &mdash; 1,162 treatment plants across 725 counties, county fill by trend and site dots by severity, with per-pathogen gauges</figcaption></figure>
+        <figure class="shot"><img loading="lazy" src="img/wastewater/state-trend.png" alt="State 52-week trend view"><figcaption><strong>State 52-week trend</strong> &mdash; population-weighted activity across 19 pathogens, with smoothing, CI, and forecast toggles</figcaption></figure>
+        <figure class="shot"><img loading="lazy" src="img/wastewater/forecast.png" alt="Wastewater-informed hospitalization forecast"><figcaption><strong>Hospitalization forecast</strong> &mdash; wastewater signal lagged two weeks against weekly COVID admissions, R&sup2;=0.56, with a four-week forecast of 941 admissions [385&ndash;1,497] and 68/95/99.7% prediction bands</figcaption></figure>
+        <figure class="shot"><img loading="lazy" src="img/wastewater/site-level.png" alt="Site level 52-week activity"><figcaption><strong>Site-level detail</strong> &mdash; a single treatment plant over 52 weeks; this granularity is what competing products don't offer</figcaption></figure>
+      </div>
+    </article>
+
+<article class="case">
+      <div class="case-top">
+        <h3>Burden &amp; Demand Model &mdash; forecast to supply</h3>
+        <span class="pill built">Designed &amp; built</span>
+        <span class="pill">160 hrs est &rarr; 30 hrs actual</span>
+      </div>
+      <p class="role">RESP-NET aligned methodology &middot; feeds the inventory and procurement layer</p>
+
+      <p class="intro">
+        A forecast that stops at a case count doesn't help anyone order supplies. This model takes
+        hospitalization input &mdash; entered manually or read directly from a SOAR forecast JSON &mdash;
+        and carries it all the way through to <strong>how many vaccine doses and how many tests</strong>
+        a jurisdiction should plan for, at low, mid, and high scenarios.
+      </p>
+
+      <div class="cols">
+        <div class="col">
+          <h4>The chain it models</h4>
+          <ul>
+            <li>Seasonal hospitalization total from off-season, moderate, and peak weekly averages &times; peak duration</li>
+            <li><strong>Age allocation</strong> across 0&ndash;17, 18&ndash;49, 50&ndash;64, and 65+ using population share and relative severity weights</li>
+            <li><strong>Infection-to-hospitalization multipliers</strong> per age band, inverting hospitalizations back to true infections</li>
+            <li>Burden conversion &mdash; symptomatic rate of infections, outpatient rate of symptomatic</li>
+            <li>Demand scenarios &mdash; vaccine uptake and tests-per-symptomatic at low/mid/high, producing the procurement numbers</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Validated, not asserted</h4>
+          <ul>
+            <li><strong>RESP-NET validation panel</strong> built into the tool: the model's age distribution is checked against published RESP-NET benchmarks per age band, showing the delta in percentage points</li>
+            <li>In the run shown, all four age bands land within 3pp of benchmark &mdash; the model isn't just internally consistent, it reproduces the surveillance system it claims alignment with</li>
+            <li>Direct <strong>SOAR forecast JSON ingestion</strong>, so the epidemic forecast drives the supply number without a human retyping it</li>
+            <li>Pairs with the <strong>Incident Bill of Materials</strong> in the inventory module, which maps demand to incident type</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="outcome">
+        <strong>Outcome &mdash;</strong> 160 conventionally-estimated hours delivered in 30. This is the piece
+        that makes &quot;forecast-driven supply&quot; a real claim rather than a slogan &mdash; and it is the work
+        accepted for presentation at a 2026 national public health laboratory conference.
+      </div>
+
+      <p class="gal-label">Screens</p>
+      <div class="gal one">
+        <figure class="shot"><img loading="lazy" src="img/burden/burden-demand-model.png" alt="COVID-19 Burden and Demand Model"><figcaption><strong>Burden &amp; Demand Model</strong> &mdash; inputs on the left, derived burden and procurement demand on the right, with the RESP-NET validation panel and age-distribution comparison</figcaption></figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="competitive">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Case Studies 04 &ndash; 05</p>
+      <h2>Competitive Analysis &amp; Feature Planning</h2>
+      <p>
+        Two decision tools built to answer questions a roadmap actually turns on &mdash; where a platform
+        stands against its market and which capability gaps to close first, and how to read
+        position-weighted signal out of a noisy live feed.
+      </p>
+    </div>
+
+    <article class="case">
+      <div class="case-top">
+        <h3>Platform Scorecard &mdash; weighted competitive analysis</h3>
+        <span class="pill built">Designed &amp; built</span>
+        <span class="pill">12 platforms &middot; 16 measures &middot; 7 stages</span>
+      </div>
+      <p class="role">Competitive analysis tool &middot; anonymized as &quot;Acme&quot; for publication</p>
+
+      <p class="intro">
+        Competitive analysis usually arrives as a static slide that encodes one person's weighting and
+        can't be argued with. This tool makes the weighting the point: score twelve life-sciences
+        platforms across sixteen measures spanning seven lifecycle stages, then swap the <strong>lens</strong>
+        &mdash; addressable market, strategic gaps, clinical-stage focus, or equal weights &mdash; and watch
+        the ranking reorder.
+      </p>
+
+      <div class="cols">
+        <div class="col">
+          <h4>How it works</h4>
+          <ul>
+            <li><strong>Four weighting lenses</strong>, each a different strategic question, applied to the same underlying scores</li>
+            <li>A <strong>published scoring rubric</strong> &mdash; five performance levels from Very High to Very Low, with explicit grading criteria written out for every measure, so a score is defensible rather than asserted</li>
+            <li><strong>Buyer personas</strong> modelled alongside the vendors, so the analysis can ask &quot;who is this for&quot; and not just &quot;who is biggest&quot;</li>
+            <li>Value factors from Very High (1.0) to Very Low (0.05), with every bar decomposable into its contributing measures</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Where it goes deeper than a chart</h4>
+          <ul>
+            <li><strong>Radar by lifecycle stage</strong> &mdash; shows shape, not just size: two platforms on similar totals can have completely different coverage profiles</li>
+            <li><strong>Measure-detail comparison</strong> &mdash; every cell carries the score, its weighted contribution, and a written justification, including the honest ones (&quot;not a differentiator and not in Acme's core scope&quot;)</li>
+            <li>It survives disagreement &mdash; when someone rejects the weighting you change the lens in front of them instead of rebuilding the deck</li>
+            <li>Under the addressable-market lens the lead platform reaches 75.0% against 60.0% and 59.4% for the nearest two, and the radar shows exactly which stages produce that lead</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="gal-label">Screens</p>
+      <div class="gal two">
+        <figure class="shot"><img loading="lazy" src="img/competitive/scorecard.png" alt="Platform scorecard weighted scores"><figcaption><strong>Weighted scores</strong> &mdash; twelve platforms under the addressable-market lens, each bar decomposed by measure, with lens and persona switching</figcaption></figure>
+        <figure class="shot"><img loading="lazy" src="img/competitive/rubric.png" alt="Scoring rubric"><figcaption><strong>Scoring rubric</strong> &mdash; five performance levels &times; sixteen measures, with the grading criteria for every cell spelled out</figcaption></figure>
+        <figure class="shot"><img loading="lazy" src="img/competitive/radar.png" alt="Radar chart comparison by stage"><figcaption><strong>Radar by stage</strong> &mdash; three platforms compared across discovery, development, manufacturing, regulatory, commercial, cross-cutting, and deployment</figcaption></figure>
+        <figure class="shot"><img loading="lazy" src="img/competitive/measure-detail.png" alt="Measure detail comparison"><figcaption><strong>Measure detail</strong> &mdash; score, weighted contribution, and written justification per measure per platform</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-top">
+        <h3>Portfolio Impact Dashboard</h3>
+        <span class="pill built">Designed &amp; built</span>
+        <span class="pill">Live market data &middot; demo book</span>
+      </div>
+      <p class="role">Real-time desktop analytics &middot; personal project</p>
+
+      <p class="intro">
+        A live equities dashboard built around one idea: position-weighted impact, not headline
+        percentages. A large move on a small position matters less than a small move on a large one,
+        so the treemap sizes every holding by <strong>position size &times; day change</strong> &mdash; what
+        actually moved the portfolio.
+      </p>
+
+      <div class="cols">
+        <div class="col">
+          <h4>Capability</h4>
+          <ul>
+            <li><strong>Impact treemap</strong> sized by position and coloured by direction, so the session reads at a glance</li>
+            <li>Multiple named portfolios &mdash; sector books maintained side by side and switched in one click</li>
+            <li>History with overlay and stacked views from 1D to 1Y, filtered to gaining, losing, selected, or top movers since open</li>
+            <li>Data modes for price, position, % change, P/E and PEG, aggregated by total, average, or weighted average</li>
+            <li>Auto-refresh with pre/post-market coverage and a generated briefing</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>The interesting part</h4>
+          <ul>
+            <li><strong>&quot;Price physics&quot;</strong> &mdash; treating price as motion: velocity as change per bar, acceleration as change in velocity, with adjustable smoothing</li>
+            <li>It surfaces inflections a price line flattens out &mdash; a decelerating rally and an accelerating one look identical on a chart and very different here</li>
+            <li><strong>Composite opportunity scores</strong> combining velocity, acceleration, volume, percentage move, P/E and PEG into a single accumulate / neutral / reduce signal per holding</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="gal-label">Screens</p>
+      <div class="gal two">
+        <figure class="shot"><img loading="lazy" src="img/portfolio/impact-treemap.png" alt="Portfolio impact treemap"><figcaption><strong>Impact treemap</strong> &mdash; portfolio value, day P&amp;L, and holdings sized by position &times; day change, with the overlay history view below</figcaption></figure>
+        <figure class="shot"><img loading="lazy" src="img/portfolio/opportunity-scores.png" alt="Opportunity scores and dollar impact"><figcaption><strong>Opportunity scores</strong> &mdash; composite accumulate / neutral / reduce signal per holding, over a dollar-impact breakdown of the session</figcaption></figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="efv">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Case Study 06</p>
+      <h2>Expeditionary Fighting Vehicle &mdash; General Dynamics</h2>
+      <p>
+        IT Integrated Product Team Lead on the U.S. Marine Corps amphibious assault vehicle program
+        &mdash; a tracked fighting vehicle that had to plane across open water at high speed and then
+        fight ashore, which is about as unforgiving as engineering integration gets.
+      </p>
+    </div>
+
+    <article class="case">
+      <div class="case-top">
+        <h3>IT and Modeling &amp; Simulation IPT Lead</h3>
+        <span class="pill led">Program-led delivery</span>
+        <span class="pill">Washington DC&ndash;Baltimore &middot; 2004&ndash;2006</span>
+      </div>
+      <p class="role">Integrated Product Team lead &middot; engineering IT, M&amp;S, and PLM</p>
+
+      <p class="intro">
+        A vehicle like this is designed by hundreds of engineers across procurement, engineering,
+        manufacturing, logistics, and product support &mdash; and the thing that actually slows the
+        program down is rarely the physics. It is whether those teams are working from the same
+        model, the same part revision, and the same data. That was my remit.
+      </p>
+
+      <div class="cols">
+        <div class="col">
+          <h4>What I led</h4>
+          <ul>
+            <li>Led the <strong>IT Integrated Product Team</strong> spanning procurement, engineering, manufacturing, logistics, and product support</li>
+            <li>Transformed enterprise IT delivery from an underperforming outsourced model to a business-aligned strategy &mdash; a <strong>30% cost reduction</strong> with consistent on-time delivery</li>
+            <li>Designed a <strong>five-year IT roadmap</strong> for the engineering enterprise</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Modeling &amp; Simulation adoption</h4>
+          <ul>
+            <li>Led adoption of <strong>CAE/CAD</strong> (PTC/Creo), <strong>PLM/PDM</strong> (Windchill), and Dassault Envision/Ergo</li>
+            <li><strong>VR for human-factors evaluation</strong> &mdash; crew ingress, egress, and workspace assessed in simulation</li>
+            <li>The point was replacing long-cycle, costly physical prototyping with digital evaluation: catch the interference or the reach problem before metal is cut, not after</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="outcome">
+        <strong>Why it still matters to how I work &mdash;</strong> this is where the pattern started.
+        Get the cross-functional teams onto one integrated data model, replace slow physical iteration
+        with fast simulated iteration, and delivery speed follows. Two decades later that is the same
+        argument I make for AI-assisted development.
+      </div>
+
+      <p class="gal-label">The vehicle</p>
+      <div class="gal one">
+        <figure class="shot">
+          <a href="https://www.bing.com/videos/riverview/relatedvideo?q=expeditionary+fighting+vehicle&amp;mid=138F9A8C16EA799DD400138F9A8C16EA799DD400&amp;churl=https%3a%2f%2fwww.youtube.com%2fchannel%2fUCB3u7W5ahPaapcmku7Mtn6g&amp;FORM=GVRPTV" target="_blank" rel="noopener">
+            <img loading="lazy" src="img/efv/efv-at-speed.jpg" alt="Expeditionary Fighting Vehicle planing at high speed through open water">
+          </a>
+          <figcaption>
+            <strong>EFV at speed on water</strong> &mdash; bow plane deployed, planing rather than swimming;
+            the capability that drove the whole integration problem.
+            <a href="https://www.bing.com/videos/riverview/relatedvideo?q=expeditionary+fighting+vehicle&amp;mid=138F9A8C16EA799DD400138F9A8C16EA799DD400&amp;churl=https%3a%2f%2fwww.youtube.com%2fchannel%2fUCB3u7W5ahPaapcmku7Mtn6g&amp;FORM=GVRPTV" target="_blank" rel="noopener">Watch the vehicle in action &rarr;</a>
+            <span class="credit">Photo: U.S. Marine Corps &middot; public domain</span>
+          </figcaption>
+        </figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="inventory">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Case Study 07</p>
+      <h2>Inventory &amp; Supply Chain Management</h2>
+      <p>
+        A full logistics module for laboratory and emergency-response supply &mdash; from a stock-transaction
+        ledger through warehouses, purchase orders, cold-chain storage, and an interactive reporting layer.
+      </p>
+    </div>
+
+    <article class="case">
+      <div class="case-top">
+        <h3>Stock ledger, cold chain, and forecast-driven supply</h3>
+        <span class="pill built">Designed &amp; built</span>
+        <span class="pill">320 hrs est &rarr; 40 hrs actual</span>
+      </div>
+      <p class="role">Product owner and developer &middot; Jul &ndash; Aug 2026</p>
+
+      <p class="intro">
+        Public health labs run on consumables with expiry dates, lot numbers, and cold-chain
+        requirements &mdash; and during an incident they need to know what is on hand, across a network of
+        facilities, right now. The module models that end to end: every movement is a ledger transaction,
+        every item reconciles atomically, and reporting slices the whole network by facility, category,
+        lot, or location.
+      </p>
+
+      <div class="cols">
+        <div class="col">
+          <h4>Capability</h4>
+          <ul>
+            <li><strong>Stock-transaction ledger</strong> with adjustments and atomic item reconciliation</li>
+            <li><strong>Barcode end to end</strong> &mdash; scan-or-type lookup, in-browser camera scanning, and barcode/label printing</li>
+            <li><strong>Cold-chain foundation</strong> &mdash; storage units, storage locations, general storage categories, and lot/batch-level records for vaccine and specimen handling</li>
+            <li>Warehouses, purchase orders with receiving-against-order, supply requests, resource requests, and bulk import</li>
+            <li><strong>Interactive pivot reporting</strong> &mdash; configurable group-by levels, reorder/below-PAR and expiring views, network position, PDF and Excel export</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Rigor</h4>
+          <ul>
+            <li><strong>Compliance foundation</strong> &mdash; audit trail and soft-delete across items and lab tests</li>
+            <li>A published <strong>field-by-object data-model reference</strong> (including the cold-chain extension) that other developers build against, plus an import template</li>
+            <li>Production user guide shipped with the module &mdash; HTML, PDF, and DOCX from a reproducible build pipeline, not hand-maintained</li>
+            <li>Fixed the migration replay path &mdash; made five existing migrations idempotent so the database rebuilds cleanly, removing a recurring source of environment breakage for the whole team</li>
+            <li>A v2 schema and API layer extending the model for advanced inventory management</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="outcome">
+        <strong>Outcome &mdash;</strong> 320 conventionally-estimated hours delivered in 40. The module underpins
+        the forecast-driven supply work: a <strong>Supply Burden Model</strong> translating forecast output into
+        projected demand, and an <strong>Incident Bill of Materials</strong> tying that demand to incident type,
+        so an outbreak, a wildfire, or another incident class each drive their own materials profile.
+        That is what turns a forecast into a procurement and pre-positioning decision rather than a number on a chart.
+      </div>
+      <p class="withheld">
+        <strong>Screens withheld.</strong> This module's interface is proprietary to the customer
+        platform and is not reproduced here. The capability description above is the deliverable record.
+      </p>
+
+    </article>
+  </div>
+</section>
+
+<section id="alerts">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Case Study 08</p>
+      <h2>Alert Center &mdash; condition-based notifications</h2>
+      <p>
+        A rules engine and multi-channel delivery platform that lets non-technical operations leads
+        author their own alerts against live platform data &mdash; built from empty branch to merged feature
+        in about five weeks.
+      </p>
+    </div>
+
+    <article class="case">
+      <div class="case-top">
+        <h3>Author a rule, target an audience, deliver everywhere</h3>
+        <span class="pill built">Designed &amp; built</span>
+        <span class="pill">400 hrs est &rarr; 60 hrs actual</span>
+      </div>
+      <p class="role">Product owner and developer &middot; Jul &ndash; Aug 2026</p>
+
+      <p class="intro">
+        Emergency operations run on conditions, not on someone remembering to check a screen: equipment
+        maintenance coming due, stock falling below PAR, a facility diverting operations, an incident
+        opening. The Alert Center turns any of those into a rule an org lead can write themselves &mdash;
+        with a schema browser, live expression validation, and a plain-English rule preview &mdash; then routes
+        it to exactly the right people on the right channel.
+      </p>
+
+      <div class="cols">
+        <div class="col">
+          <h4>Engine &amp; delivery</h4>
+          <ul>
+            <li><strong>Rules engine</strong> with configurable triggers, per-organization controls, and auto-resolve</li>
+            <li>Four-step authoring wizard &mdash; basic info, trigger rules, channels &amp; message, summary &mdash; plus a Simple path for non-technical leads</li>
+            <li><strong>Multi-channel delivery</strong> &mdash; in-app bell and Alert Center, email over SMTP, rich-text broadcast, scheduled director reports, and per-facility low-stock digests</li>
+            <li>Test-send before publish, so an author sees the real message before anyone else does</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Audience model &amp; hardening</h4>
+          <ul>
+            <li>Role-targeted delivery, hand-picked individual recipients, and own-org vs. network broadcast scope</li>
+            <li><strong>Email to non-user personnel</strong> with full unsubscribe handling &mdash; reaching people who don't have platform accounts</li>
+            <li>Opt-in subscribable alerts and per-user notification preferences</li>
+            <li><strong>Security pass</strong> &mdash; admin-only alert configurations, org-lead scoping, cross-organization leak fixes; a documented review found and fixed four security/correctness defects before release</li>
+            <li>Engine tests, behavior smoke tests, a role-permission suite, org-roster permission tests, and Playwright specs in CI &mdash; with a numbered test-evidence pack</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="outcome">
+        <strong>Outcome &mdash;</strong> 400 conventionally-estimated hours delivered in 60, shipped with a test
+        suite, a security review, and two production user guides (Administrator and End-User) each in
+        HTML, PDF, and DOCX with 20+ annotated screenshots. The hours came out of development, not out of rigor.
+      </div>
+      <p class="withheld">
+        <strong>Screens withheld.</strong> This module's interface is proprietary to the customer
+        platform and is not reproduced here. The capability description above is the deliverable record.
+      </p>
+
+
+    </article>
+  </div>
+</section>
+
+<section id="more">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Case Studies 09 &ndash; 11</p>
+      <h2>Modeling and applied AI rigor</h2>
+      <p>
+        Work where the deliverable was a model, a method, or a proof that an AI system can be
+        trusted. These run in restricted or in-progress environments, so no screens are shown.
+      </p>
+    </div>
+
+<article class="case">
+      <div class="case-top">
+        <h3>Pertussis epidemic model &mdash; 8-compartment SEIRS</h3>
+        <span class="pill built">Designed &amp; built</span>
+        <span class="pill">120 hrs est &rarr; 24 hrs actual</span>
+      </div>
+      <p class="role">Extension of an open epidemic-modeling framework &middot; Jul 2026</p>
+      <p class="intro">
+        Extended an existing epidemic-modeling framework to support pertussis, upgrading it to an
+        <strong>8-compartment SEIRS partial-immunity model</strong> with age-stratified dynamics &mdash; the
+        structure the disease actually requires, since pertussis immunity wanes and age cohorts behave
+        very differently.
+      </p>
+      <div class="cols">
+        <div class="col">
+          <h4>Model</h4>
+          <ul>
+            <li>Age-stratified vaccination planner with per-age immunity and a CDC DTaP/Tdap schedule preset</li>
+            <li>Persistent campaign and coverage-by-age profiles, seeded from real county surveillance data</li>
+            <li>Observed-data comparison, seeding, and coarse calibration so the model is checkable against actual surveillance</li>
+            <li>A contacts-by-setting view for intervention reasoning</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Validation &amp; publication</h4>
+          <ul>
+            <li>A six-item scientific-validation protocol &mdash; inter-epidemic period, waning immunity, age distribution, vaccination response, ABC calibration fit, and face-validity bounds</li>
+            <li>Hardened for operational use: single-threaded native math and a resilient auto-restart launcher</li>
+            <li>Authored a journal-paper proposal for federal sponsors on extending an epidemic-modeling dashboard to a new pathogen with an AI coding assistant, with a systematic 2024&ndash;2026 literature review establishing the whitespace</li>
+          </ul>
+        </div>
+      </div>
+      <div class="outcome">
+        <strong>Also delivered &mdash;</strong> an advanced SEIR measles simulation with disease parameters,
+        multiple population segments, and time-phased interventions; and a Model Quality Assessment Tool
+        evaluating infectious-disease models against a multi-criteria decision framework.
+      </div>
+    </article>
+
+<article class="case">
+      <div class="case-top">
+        <h3>Spend-Plan Agent Validation Harness</h3>
+        <span class="pill built">Designed &amp; built</span>
+        <span class="pill">Applied AI rigor</span>
+      </div>
+      <p class="role">Deterministic, non-LLM validation of an AI agent's compute path</p>
+      <p class="intro">
+        If an AI agent produces a federal grant spend plan, someone has to be able to prove it is right.
+        This harness grades agent output against an <strong>independently computed oracle</strong> &mdash;
+        MTDC base, SF-424A object classes, projections &mdash; with explicit tolerances, and adds two layers on top.
+      </p>
+      <div class="cols">
+        <div class="col">
+          <h4>Layers</h4>
+          <ul>
+            <li>A <strong>consistency layer</strong> that treats run-to-run drift as a defect</li>
+            <li>A <strong>metamorphic layer</strong> that validates behavior with no ground truth required</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Why it matters</h4>
+          <ul>
+            <li>It <strong>provably discriminates</strong>: it catches a wrong-indirect-base bug the metamorphic layer misses, and a line-item-collapse bug the oracle misses</li>
+            <li>Neither layer alone is sufficient &mdash; which is the point, and the reason this is the kind of rigor that makes AI-generated analysis trustworthy in a grant-compliance context</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+<article class="case">
+      <div class="case-top">
+        <h3>Field inventory &mdash; mobile PWA</h3>
+        <span class="pill built">Designed &amp; built</span>
+        <span class="pill">In progress</span>
+      </div>
+      <p class="role">Warehouse and field-response use on a phone</p>
+      <p class="intro">
+        A mobile progressive web app for inventory work away from a desk: camera-based barcode and QR
+        scanning for item and location lookup, scan-or-type entry, creating a location inline when it
+        doesn't exist yet, UPC relabelling, and a catalog admin console with inline pending adds &mdash; the
+        operations that matter when someone is standing in a warehouse aisle rather than sitting at a workstation.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">How</p>
+      <h2>AI-assisted delivery, measured</h2>
+      <p>
+        Conventional estimates are what each build would have been scoped at with a staffed development
+        team. Actuals are hours I expended. Loaded rate $100/hr.
+      </p>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Deliverable</th>
+            <th class="num">Conventional</th>
+            <th class="num">Actual</th>
+            <th class="num">Hours avoided</th>
+            <th class="num">Cost avoided</th>
+            <th class="num">Reduction</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Notifications / Alert Center</td><td class="num">400</td><td class="num">60</td><td class="num">340</td><td class="num">$34,000</td><td class="num">85%</td></tr>
+          <tr><td>Inventory Management</td><td class="num">320</td><td class="num">40</td><td class="num">280</td><td class="num">$28,000</td><td class="num">88%</td></tr>
+          <tr><td>Wastewater Monitoring POC</td><td class="num">160</td><td class="num">28</td><td class="num">132</td><td class="num">$13,200</td><td class="num">83%</td></tr>
+          <tr><td>Supply Burden Model</td><td class="num">160</td><td class="num">30</td><td class="num">130</td><td class="num">$13,000</td><td class="num">81%</td></tr>
+          <tr><td>Pertussis SEIRS Model</td><td class="num">120</td><td class="num">24</td><td class="num">96</td><td class="num">$9,600</td><td class="num">80%</td></tr>
+          <tr class="total"><td>Total</td><td class="num">1,160</td><td class="num">182</td><td class="num">978</td><td class="num">$97,800</td><td class="num">84%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid2" style="margin-top:34px">
+      <div class="card">
+        <h3>The range is the finding</h3>
+        <p>
+          The reduction held across five different problem domains &mdash; a notification rules engine, an
+          inventory and logistics system, a surveillance dashboard, a supply-demand model, and a
+          compartmental epidemiological model. The range is tight, 80&ndash;88%. That means this is a
+          repeatable delivery method rather than one lucky module, which makes it a planning assumption
+          an organization can actually use.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Not at the expense of quality</h3>
+        <p>
+          The two largest items shipped with test suites, security review, and production user
+          documentation attached. I stood up the end-to-end Playwright test capability the program had
+          been operating without, built role-permission and org-roster test suites for the module I
+          delivered, and produced a numbered test-evidence pack. The hours came out of development,
+          not out of rigor.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="note">
+      <strong>About these screenshots.</strong> Screens for the Inventory and Alert Center modules are
+      withheld as proprietary to the customer platform; those case studies carry their capability record
+      only. The screens shown come from demonstration environments, published user documentation, and
+      public data sources &mdash; CDC NWSS and WastewaterSCAN for wastewater, RESP-NET planning defaults
+      for the burden model. They contain no personal health information, no personally identifiable
+      information, and no customer operational data. Competitor and platform names in the scorecard are
+      anonymized. Source code is not included in this repository &mdash; this is a description of work,
+      not a distribution of it.
+    </div>
+    <p>
+      Mark R. Routson &middot; <a href="mailto:routsonm@me.com">routsonm@me.com</a> &middot;
+      <a href="tel:+12406882660">240-688-2660</a>
+    </p>
+  </div>
+</footer>
+
+<div class="lb" id="lb"><span class="x">&times;</span><img id="lbImg" src="" alt=""><div class="cap" id="lbCap"></div></div>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb'),img=document.getElementById('lbImg'),cap=document.getElementById('lbCap');
+  document.querySelectorAll('.shot').forEach(function(fig){
+    // figures wrapping an external link open that link instead of the lightbox
+    if(fig.querySelector('a')) return;
+    fig.addEventListener('click',function(){
+      var i=fig.querySelector('img'),c=fig.querySelector('figcaption');
+      img.src=i.src; img.alt=i.alt; cap.textContent=c?c.textContent:''; lb.classList.add('on');
+      document.body.style.overflow='hidden';
+    });
+  });
+  function close(){lb.classList.remove('on');img.src='';document.body.style.overflow='';}
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+</body>
+</html>
