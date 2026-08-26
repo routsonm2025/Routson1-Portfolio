@@ -423,11 +423,12 @@ footer p{max-width:74ch;margin:0 0 14px}
 <section id="modeling">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Case Studies 02 &ndash; 03</p>
-      <h2>Surveillance and forecast-driven supply</h2>
+      <p class="eyebrow">Case Studies 02 &ndash; 05</p>
+      <h2>Surveillance, genomics and forecast evaluation</h2>
       <p>
-        Work where the product question was scientific or methodological &mdash; turning surveillance
-        signal into a forecast, and a forecast into a supply decision.
+        Where the product question was scientific &mdash; turning surveillance signal into a forecast,
+        a forecast into a supply decision, and nine million public genomes into a map you can read
+        without misreading it.
       </p>
     </div>
 
@@ -530,13 +531,110 @@ footer p{max-width:74ch;margin:0 0 14px}
         <figure class="shot"><img loading="lazy" src="img/burden/burden-demand-model.png" alt="COVID-19 Burden and Demand Model"><figcaption><strong>Burden &amp; Demand Model</strong> &mdash; inputs on the left, derived burden and procurement demand on the right, with the RESP-NET validation panel and age-distribution comparison</figcaption></figure>
       </div>
     </article>
+    <article class="case">
+      <div class="case-top">
+        <h3>SARS-CoV-2 genomic surveillance &mdash; world map</h3>
+        <span class="pill built">Designed &amp; built</span>
+        <span class="pill">9.4M sequences &middot; 81 months</span>
+      </div>
+      <p class="role">Animated choropleth over the full public genome corpus</p>
+
+      <p class="intro">
+        Every public SARS-CoV-2 genome &mdash; 9,432,057 sequences across 56 fields, the corpus that
+        Nextstrain's published trees are subsampled <em>from</em> &mdash; streamed into a local database
+        and rendered as an animated world map of sequencing intensity through time.
+      </p>
+
+      <div class="cols">
+        <div class="col">
+          <h4>Capability</h4>
+          <ul>
+            <li><strong>Two levels of geography</strong> &mdash; 241 countries and 4,596 states/provinces, animated across 81 months with play, step, scrub and speed control</li>
+            <li><strong>Variant view</strong> &mdash; type-ahead over all 5,392 Pango lineages; pick one and the whole timeline redraws as that lineage, with an option to roll up sublineages (BA.2 also counting BA.2.75)</li>
+            <li>Measures for sequences per 100k, raw count, or share of world; windows for month, 3- and 12-month average, or cumulative</li>
+            <li>Log scale by default &mdash; per-capita sequencing spans roughly five orders of magnitude</li>
+            <li>Click a region for its own history; right-click for its variants</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>Where the work actually was</h4>
+          <ul>
+            <li><strong>100.00% of 9,391,937 dated sequences</strong> matched a country polygon; 99.92% of those carrying a division matched at state/province level</li>
+            <li>Three naming conventions had to reconcile &mdash; Nextstrain, world-atlas and World Bank &mdash; through a normaliser plus explicit alias tables. Natural Earth splits the UK into 232 districts while Nextstrain files England/Scotland/Wales/NI; US territories are separate entities rather than admin-1 units</li>
+            <li><strong>Per-capita is deliberately country-only.</strong> There is no sub-national population in the source, and apportioning national population across provinces would be fabrication, so the measure list drops at that level rather than inventing a denominator</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="outcome">
+        <strong>The caveat is part of the product.</strong> The colour is genomes deposited, not case
+        incidence &mdash; normalised by population it measures a region's <em>surveillance intensity</em>,
+        a function of sequencing capacity, funding and submission policy. Denmark is dark because it
+        sequenced heavily, not because it was sicker. That warning sits in the status bar, the docstring
+        and the README, because a map this legible is exactly the kind that gets misread.
+      </div>
+
+      <p class="gal-label">Screens</p>
+      <div class="gal one">
+        <figure class="shot"><img loading="lazy" src="img/genomics/world-map.png" alt="SARS-CoV-2 genomic surveillance world map"><figcaption><strong>World choropleth</strong> &mdash; sequences per 100k on a log scale, 3-month average, with the variant picker, geography and measure controls; the status bar carries the coverage figures and the not-case-incidence warning</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-top">
+        <h3>Forecast hub RMSE &mdash; scoring the forecasters</h3>
+        <span class="pill built">Designed &amp; built</span>
+        <span class="pill">85,363 scored pairs</span>
+      </div>
+      <p class="role">Evaluation harness for any hubverse forecast hub</p>
+
+      <p class="intro">
+        Public health agencies consume ensemble forecasts with little ability to ask which component
+        models have actually been right. This scores any hubverse hub &mdash; COVID-19, FluSight, RSV, or
+        one you register yourself &mdash; by reading the hub's GitHub repo over HTTPS, pairing every
+        submitted forecast with what actually happened, and reporting RMSE by model and location.
+      </p>
+
+      <div class="cols">
+        <div class="col">
+          <h4>What it measures</h4>
+          <ul>
+            <li>RMSE, baseline RMSE, <strong>relative RMSE</strong>, interval coverage, and a Diebold-Mariano p-value, with bootstrap confidence intervals</li>
+            <li>A models &times; locations heatmap with a pooled All column; click any cell for that location's observed history with every historic forecast drawn against it</li>
+            <li><strong>Horizon filtering that rescopes and rescores</strong> &mdash; asking for three weeks ahead drops the models that never forecast that far <em>and</em> re-scores the survivors at that horizon alone. On the COVID hub 12 of 14 models survive; ranking models on pooled numbers while selecting them on something else would be a quiet error</li>
+            <li><strong>Fade if tied with baseline</strong> washes out cells the evidence cannot separate from the baseline, so only supported differences stay saturated</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4>The finding that justifies it</h4>
+          <ul>
+            <li>Hospital-admission data gets revised after publication. In the COVID hub <strong>75% of observed weeks end up different from what was first reported</strong>, by a mean of 28 admissions</li>
+            <li>So every prediction is scored twice &mdash; against the latest revision (<em>who was closest to the truth</em>) and against first reports (<em>who looked closest at the time</em>)</li>
+            <li>It changes conclusions: OHT_JHU-nbxd scores 0.80 relative RMSE against the latest revision but <strong>1.14 against first reports</strong>. It beats the baseline on one and loses on the other, because the data moved underneath it</li>
+            <li>Weeks whose earliest snapshot arrived too late to be a true first report are flagged rather than quietly counted</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="outcome">
+        <strong>Outcome &mdash;</strong> a defensible answer to &quot;which model should we trust, and how
+        far out?&quot; across 85,363 scored forecast-actual pairs, with the awkward caveats surfaced rather
+        than buried. The same harness runs against FluSight's 57 models and the RSV hub unchanged.
+      </div>
+
+      <p class="gal-label">Screens</p>
+      <div class="gal one">
+        <figure class="shot"><img loading="lazy" src="img/rmse/heatmap.png" alt="Forecast hub RMSE model comparison heatmap"><figcaption><strong>Model &times; location heatmap</strong> &mdash; 14 COVID models scored against CovidHub-baseline, coloured best-to-worst per column, with vintage, horizon, metric and tie-fading controls</figcaption></figure>
+      </div>
+    </article>
+
   </div>
 </section>
 
 <section id="competitive">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Case Studies 04 &ndash; 05</p>
+      <p class="eyebrow">Case Studies 06 &ndash; 07</p>
       <h2>Competitive Analysis &amp; Feature Planning</h2>
       <p>
         Two decision tools built to answer questions a roadmap actually turns on &mdash; where a platform
@@ -639,7 +737,7 @@ footer p{max-width:74ch;margin:0 0 14px}
 <section id="efv">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Case Study 06</p>
+      <p class="eyebrow">Case Study 08</p>
       <h2>Expeditionary Fighting Vehicle &mdash; General Dynamics</h2>
       <p>
         IT Integrated Product Team Lead on the U.S. Marine Corps amphibious assault vehicle program
@@ -710,7 +808,7 @@ footer p{max-width:74ch;margin:0 0 14px}
 <section id="inventory">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Case Study 07</p>
+      <p class="eyebrow">Case Study 09</p>
       <h2>Inventory &amp; Supply Chain Management</h2>
       <p>
         A full logistics module for laboratory and emergency-response supply &mdash; from a stock-transaction
@@ -776,7 +874,7 @@ footer p{max-width:74ch;margin:0 0 14px}
 <section id="alerts">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Case Study 08</p>
+      <p class="eyebrow">Case Study 10</p>
       <h2>Alert Center &mdash; condition-based notifications</h2>
       <p>
         A rules engine and multi-channel delivery platform that lets non-technical operations leads
@@ -841,7 +939,7 @@ footer p{max-width:74ch;margin:0 0 14px}
 <section id="more">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Case Studies 09 &ndash; 11</p>
+      <p class="eyebrow">Case Studies 11 &ndash; 13</p>
       <h2>Modeling and applied AI rigor</h2>
       <p>
         Work where the deliverable was a model, a method, or a proof that an AI system can be

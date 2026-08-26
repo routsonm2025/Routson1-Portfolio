@@ -15,11 +15,13 @@ img/wastewater/        4 screenshots — Wastewater Early Warning System
 img/competitive/       4 screenshots — Platform Scorecard (scores, rubric, radar, detail)
 img/portfolio/         2 screenshots — Portfolio Impact Dashboard
 img/burden/            1 screenshot  — Burden & Demand Model
+img/genomics/          1 screenshot  — SARS-CoV-2 world map
+img/rmse/              1 screenshot  — Forecast hub RMSE
 img/efv/               1 photo       — Expeditionary Fighting Vehicle (USMC, public domain)
 .nojekyll             tells GitHub Pages to serve files as-is
 ```
 
-20 images, ~4 MB total. Sections are ordered so the visual case studies lead. Inventory and Alert Center screens are deliberately withheld as
+22 images, ~4 MB total. Sections are ordered so the visual case studies lead. Inventory and Alert Center screens are deliberately withheld as
 proprietary — those two case studies carry their capability description only.
 
 ## Contents of the site
@@ -29,11 +31,11 @@ proprietary — those two case studies carry their capability description only.
 | About | Bio, contact details, certifications — placed before the case studies |
 | Vexus overview | Platform, state health department rollout, forecast → alert → response |
 | Case study 01 | SOAR — forecasting, MQAT, ensemble builder, UShER, lab results, alerts, measles |
-| Case studies 02–03 | Wastewater Early Warning System; Burden & Demand Model |
-| Case studies 04–05 | Platform Scorecard (competitive analysis); Portfolio Impact Dashboard |
-| Case study 06 | Expeditionary Fighting Vehicle — General Dynamics, IT/M&S IPT Lead |
-| Case studies 07–08 | Inventory & Supply Chain; Alert Center — text only, screens withheld |
-| Case studies 09–11 | Pertussis SEIRS model, spend-plan AI validation harness, mobile PWA |
+| Case studies 02–05 | Wastewater; Burden & Demand Model; SARS-CoV-2 world map; Forecast hub RMSE |
+| Case studies 06–07 | Platform Scorecard (competitive analysis); Portfolio Impact Dashboard |
+| Case study 08 | Expeditionary Fighting Vehicle — General Dynamics, IT/M&S IPT Lead |
+| Case studies 09–10 | Inventory & Supply Chain; Alert Center — text only, screens withheld |
+| Case studies 11–13 | Pertussis SEIRS model, spend-plan AI validation harness, mobile PWA |
 | Method | AI-assisted delivery measured across five modules (1,160 hrs est → 182 hrs actual) |
 
 ## Publishing to GitHub
